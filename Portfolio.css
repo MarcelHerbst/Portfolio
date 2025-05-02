@@ -1,0 +1,72 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: auto;
+  min-height: 100vh;
+  background-color: #2a2a2a;
+  color: #f0f0f0;
+}
+
+#banner {
+  height: 30vh;
+  background:
+    linear-gradient(to bottom, rgba(42, 42, 42, 0) 95%, #2a2a2a 100%),
+    url("Picture_Website/20220625_161055.jpg") center center / 100% auto no-repeat;
+}
+
+#mainCanvas {
+  width: 100%;
+  height: 60vh;
+  display: block;
+  position: relative;
+  background: 
+    linear-gradient(to top, rgba(42, 42, 42, 0) 0%, #2a2a2a 60px),
+    linear-gradient(to bottom, #3a3a3a 0%, #2a2a2a 100%);
+  border: none;
+}
+
+/* Zentrale Positionierung der Navigation im Canvas */
+.main-nav {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.2rem;
+  padding: 1rem 2rem;
+  background-color: transparent;
+  font-family: 'Arial', sans-serif;
+  z-index: 20;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: #f0f0f0;
+  background-color: #3a3a3a;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.6rem 1.4rem;
+  border-radius: 999px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.main-nav a:hover {
+  background-color: #4a4a4a;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 600px) {
+  .main-nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .main-nav a {
+    width: 90%;
+    text-align: center;
+  }
+}
+
