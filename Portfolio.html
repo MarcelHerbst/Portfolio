@@ -1,32 +1,45 @@
 <!DOCTYPE html>
 <html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Marcel's Portfolio</title>
+  <link rel="stylesheet" href="Portfolio.css" />
+  <script src="Portfolio.js" defer></script>
+</head>
+<body>
 
-    <head>
-        <meta charset="UTF-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <title>Marcel's Portfolio</title>
-        <link rel="stylesheet" href="Portfolio.css" />
-        <script src="Portfolio.js" defer></script>
-    </head>
+  <div id="banner">
+    <div class="hero-text">
+      <h1>Ich bin Marcel</h1>
+      <p>Ich entwickle visuelle Welten, immersive Klangräume und spielerische Interaktion.</p>
+    </div>
+  </div>
 
-    <body>
-        <div id="banner"></div>
-        
-        <nav class="main-nav">
-            <a href="#visual">Visual & Motion Design</a>
-            <a href="#sound">Sound & Audio Experiences</a>
-            <a href="#games">Games & Interactive Media</a>
-            <a href="#installations">Installations & Hybrid Works</a>
-            <a href="#characters">Characters & Lore</a>
-            <a href="#about me">About Me</a>
-          </nav>
+  <nav class="main-nav">
+    <a href="#3d" class="nav-button">
+        <img src="Picture_Website/Icon_3D Art & Design.png" alt="3D Icon" class="nav-icon" />
+        3D Art & Design
+    </a>
+    <a href="#sound" class="nav-button">
+        <img src="Picture_Website/Icon_Sound & Audio Experiences.png" alt="Sound" class="nav-icon" />
+        Sound & Audio Experiences
+    </a>
+    <a href="#games" class="nav-button">
+        <img src="Picture_Website/Icon_Characters & Lore.png" alt="Characters" class=" nav-icon"/>
+        Characters & Lore
+    </a>
+    <a href="#characters">
+        <img src="Picture_Website/Icon_Games & Interactive Media.png" alt="Games" class=" nav-icon"/>
+        Games & Interactive Media
+    </a>
+    <a href="#about">
+        <img src="Picture_Website/Icon_About.Contact.png" alt="About/Contact" class=" nav-icon"/>
+        About / Contact 
+    </a>
+  </nav>
 
+  <canvas id="mainCanvas"></canvas>
 
-
-
-        <canvas id="mainCanvas"></canvas>
-        
-    </body>
-
-
+</body>
 </html>
