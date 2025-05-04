@@ -17,27 +17,89 @@
   </div>
 
   <nav class="main-nav">
-    <a href="#3d" class="nav-button">
+
+    <div class="nav-item">
+      <a href="#3d" class="nav-button">
         <img src="Picture_Website/Icon_3D Art & Design.png" alt="3D Icon" class="nav-icon" />
-        3D Art & Design
-    </a>
-    <a href="#sound" class="nav-button">
+        3D Modeling & Assets
+      </a>
+      <div class="submenu">
+        <!-- Submenu Punkt 1: Fall of Egypt -->
+        <div class="submenu-item">
+          <a href="#FallofEgypt">
+            <span class="submenu-label">Fall of Egypt:<br>The Last City</span>
+            <img src="Picture_Website/Icon_Pfeil.png" alt="Pfeil" class="icon-pfeil"/>
+          </a>
+          <div class="sub-submenu">
+            <a href="#Player">playerfigure</a>
+            <a href="#soldier">Soldier</a>
+            <a href="#Horde">Horde</a>
+            <a href="#zombie">Zombie</a>
+            <a href="#roundtracker">Round Tracker</a>
+            <a href="#cardholder">Cardholder</a>
+          </div>
+        </div>
+        <div class="submenu-item">
+          <a href="#Characters">
+            <span class="submenu-label">Characters</span>
+            <img src="Picture_Website/Icon_Pfeil.png" alt="Pfeil" class="icon-pfeil"/>
+          </a>
+          <div class="sub-submenu">
+            <a href="#kumo">Kumo</a>
+            <!-- weitere Sub-Submenü-Punkte -->
+          </div>
+        </div>
+  </div>
+</div>
+  
+    <div class="nav-item">
+      <a href="#sound" class="nav-button">
         <img src="Picture_Website/Icon_Sound & Audio Experiences.png" alt="Sound" class="nav-icon" />
         Sound & Audio Experiences
-    </a>
-    <a href="#games" class="nav-button">
-        <img src="Picture_Website/Icon_Characters & Lore.png" alt="Characters" class=" nav-icon"/>
+      </a>
+      <div class="submenu">
+        <a href="#ambisonic">Ambisonic</a>
+        <a href="#fx">Sound FX</a>
+        <a href="#music">Music</a>
+      </div>
+    </div>
+  
+    <div class="nav-item">
+      <a href="#games" class="nav-button">
+        <img src="Picture_Website/Icon_Characters & Lore.png" alt="Characters" class="nav-icon" />
         Characters & Lore
-    </a>
-    <a href="#characters">
-        <img src="Picture_Website/Icon_Games & Interactive Media.png" alt="Games" class=" nav-icon"/>
+      </a>
+      <div class="submenu">
+        <a href="#characters">Characters</a>
+        <a href="#lore">Lore</a>
+      </div>
+    </div>
+  
+    <div class="nav-item">
+      <a href="#interactive" class="nav-button">
+        <img src="Picture_Website/Icon_Games & Interactive Media.png" alt="Games" class="nav-icon" />
         Games & Interactive Media
-    </a>
-    <a href="#about">
-        <img src="Picture_Website/Icon_About.Contact.png" alt="About/Contact" class=" nav-icon"/>
-        About / Contact 
-    </a>
+      </a>
+      <div class="submenu">
+        <a href="#physics">Physics Game</a>
+        <a href="#board">Board Game</a>
+      </div>
+    </div>
+  
+    <div class="nav-item">
+      <a href="#about" class="nav-button">
+        <img src="Picture_Website/Icon_About.Contact.png" alt="About/Contact" class="nav-icon" />
+        About / Contact
+      </a>
+      <div class="submenu">
+        <a href="#aboutme">About Me</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  
   </nav>
+  
+  <div class="separator"></div>
 
   <canvas id="mainCanvas"></canvas>
 
