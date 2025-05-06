@@ -207,9 +207,6 @@ html, body {
   z-index: 999;
 }
 
-.submenu-item:hover .sub-submenu {
-  display: flex;
-}
 
 .submenu-item > a::after {
   content: "";
@@ -217,9 +214,7 @@ html, body {
   opacity: 0.8;
 }
 
-.nav-item:hover .submenu {
-  display: flex;
-}
+
 
 
 @keyframes growLine {
