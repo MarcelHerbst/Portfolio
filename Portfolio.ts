@@ -5,29 +5,6 @@ function clearCanvas() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 }
 
-function resizeCanvas() {
-  const dpr = window.devicePixelRatio || 1;
-
-  const bannerHeight = document.getElementById("banner")?.offsetHeight || 0;
-  const navHeight = document.querySelector(".main-nav")?.clientHeight || 0;
-  const contentHeight = document.getElementById("contentArea")?.offsetHeight || 0;
-
-  const canvasHeight = window.innerHeight - (bannerHeight + navHeight + contentHeight + 10);
-
-  canvas.style.height = `${canvasHeight}px`;
-  canvas.style.width = "100%";
-
-  canvas.width = canvas.offsetWidth * dpr;
-  canvas.height = canvas.offsetHeight * dpr;
-
-  ctx.setTransform(1, 0, 0, 1, 0, 0);
-  ctx.scale(dpr, dpr);
-}
-
-
-resizeCanvas();
-window.addEventListener("resize", resizeCanvas);
-
 const navItems = document.querySelectorAll('.nav-item');
 
 navItems.forEach(item => {
@@ -111,15 +88,7 @@ function drawImageWithTitle(src: string, title: string) {
   img.src = src;
 }
 
-const canvasRenderMap: Record<string, () => void> = {
-  //"#Player": () => drawImageModel("Player Modell", "Picture_Website/Player_Model.png"),
-  //"#soldier": () => drawImageModel("Soldier Modell", "Picture_Website/Soldier_Model.png"),
-  //"#zombie": () => drawImageModel("Zombie Modell", "Picture_Website/Zombie_Model.png"),
-  //"#roundtracker": () => drawImageModel("Roundtracker", "Picture_Website/Roundtracker.png"),
-  //"#cardholder": () => drawImageModel("Cardholder", "Picture_Website/Cardholder.png"),
-  //"#kumo": () => drawImageModel("Kumo", "Picture_Website/Kumo.png"),
-  // usw.
-};
+
 
 document.querySelectorAll('.main-nav a').forEach(link => {
   link.addEventListener('click', (e) => {
@@ -208,18 +177,36 @@ const htmlContentMap: Record<string, { title: string; images: string[]; text: st
       "3DModell/PlayerCharakter/PlayerCharakter_Rechts.png",
       "3DModell/PlayerCharakter/PlayerCharakter_Hinten.png"
     ],
-       // ← z. B. ein Dummy-Bild
     text: [
       "This model represents the player character of the game Fall of Egypt: The Last City. \nIt is inspired by the citizens of ancient Egypt.",  
     ]
   },
-
   "#soldier": {
   title: "Soldier Modell",
   sectionTitle: "Fall of Egypt: The Last City",
-  images: [""],
-  text: ["Dies ist das Soldier-Modell."]
-}
+  images: [
+      "3DModell/Soldat/Soldat_Links.png",
+      "3DModell/Soldat/Soldat_Vorne.png",
+      "3DModell/Soldat/Soldat_Rechts.png",
+      "3DModell/Soldat/Soldat_Hinten.png"
+  ],
+  text: ["This model represents a soldier in ancient Egypt. He carries a spear and a shield, as these weapons were commonly used by Egyptian soldiers. I also gave him a head covering to suggest that soldiers protected themselves from the heat to avoid heatstroke."]
+  },
+  "#Horde":{
+    title:"Horde Modell",
+    sectionTitle: "Fall of Egypt: The Last City",
+    images:[
+      "3DModell/Horde/Horde_Links.png",
+      "3DModell/Horde/Horde_Vorne_Links.png",
+      "3DModell/Horde/Horde_Vorne.png",
+      "3DModell/Horde/Horde_Vorne_Rechts.png",
+      "3DModell/Horde/Horde_Rechts.png",
+      "3DModell/Horde/Horde_Hinten.png",
+    ],
+    text:[
+      "The horde model was created using multiple individual parts of the zombie model in a modular, kit-like system. This allowed me to save time and create different poses, or omit parts like arms or legs. sThe result is a chaotic-looking cluster of zombies."
+    ]
+  },
 
 };
 

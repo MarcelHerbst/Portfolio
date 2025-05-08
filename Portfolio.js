@@ -4,22 +4,6 @@ const ctx = canvas.getContext("2d");
 function clearCanvas() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 }
-function resizeCanvas() {
-    var _a, _b, _c;
-    const dpr = window.devicePixelRatio || 1;
-    const bannerHeight = ((_a = document.getElementById("banner")) === null || _a === void 0 ? void 0 : _a.offsetHeight) || 0;
-    const navHeight = ((_b = document.querySelector(".main-nav")) === null || _b === void 0 ? void 0 : _b.clientHeight) || 0;
-    const contentHeight = ((_c = document.getElementById("contentArea")) === null || _c === void 0 ? void 0 : _c.offsetHeight) || 0;
-    const canvasHeight = window.innerHeight - (bannerHeight + navHeight + contentHeight + 10);
-    canvas.style.height = `${canvasHeight}px`;
-    canvas.style.width = "100%";
-    canvas.width = canvas.offsetWidth * dpr;
-    canvas.height = canvas.offsetHeight * dpr;
-    ctx.setTransform(1, 0, 0, 1, 0, 0);
-    ctx.scale(dpr, dpr);
-}
-resizeCanvas();
-window.addEventListener("resize", resizeCanvas);
 const navItems = document.querySelectorAll('.nav-item');
 navItems.forEach(item => {
     const toggleButton = item.querySelector('a');
@@ -85,15 +69,6 @@ function drawImageWithTitle(src, title) {
     };
     img.src = src;
 }
-const canvasRenderMap = {
-//"#Player": () => drawImageModel("Player Modell", "Picture_Website/Player_Model.png"),
-//"#soldier": () => drawImageModel("Soldier Modell", "Picture_Website/Soldier_Model.png"),
-//"#zombie": () => drawImageModel("Zombie Modell", "Picture_Website/Zombie_Model.png"),
-//"#roundtracker": () => drawImageModel("Roundtracker", "Picture_Website/Roundtracker.png"),
-//"#cardholder": () => drawImageModel("Cardholder", "Picture_Website/Cardholder.png"),
-//"#kumo": () => drawImageModel("Kumo", "Picture_Website/Kumo.png"),
-// usw.
-};
 document.querySelectorAll('.main-nav a').forEach(link => {
     link.addEventListener('click', (e) => {
         const href = (link.getAttribute('href') || "").trim();
@@ -172,7 +147,6 @@ const htmlContentMap = {
             "3DModell/PlayerCharakter/PlayerCharakter_Rechts.png",
             "3DModell/PlayerCharakter/PlayerCharakter_Hinten.png"
         ],
-        // ← z. B. ein Dummy-Bild
         text: [
             "This model represents the player character of the game Fall of Egypt: The Last City. \nIt is inspired by the citizens of ancient Egypt.",
         ]
@@ -180,9 +154,29 @@ const htmlContentMap = {
     "#soldier": {
         title: "Soldier Modell",
         sectionTitle: "Fall of Egypt: The Last City",
-        images: [""],
-        text: ["Dies ist das Soldier-Modell."]
-    }
+        images: [
+            "3DModell/Soldat/Soldat_Links.png",
+            "3DModell/Soldat/Soldat_Vorne.png",
+            "3DModell/Soldat/Soldat_Rechts.png",
+            "3DModell/Soldat/Soldat_Hinten.png"
+        ],
+        text: ["This model represents a soldier in ancient Egypt. He carries a spear and a shield, as these weapons were commonly used by Egyptian soldiers. I also gave him a head covering to suggest that soldiers protected themselves from the heat to avoid heatstroke."]
+    },
+    "#Horde": {
+        title: "Horde Modell",
+        sectionTitle: "Fall of Egypt: The Last City",
+        images: [
+            "3DModell/Horde/Horde_Links.png",
+            "3DModell/Horde/Horde_Vorne_Links.png",
+            "3DModell/Horde/Horde_Vorne.png",
+            "3DModell/Horde/Horde_Vorne_Rechts.png",
+            "3DModell/Horde/Horde_Rechts.png",
+            "3DModell/Horde/Horde_Hinten.png",
+        ],
+        text: [
+            "The horde model was created using multiple individual parts of the zombie model in a modular, kit-like system. This allowed me to save time and create different poses, or omit parts like arms or legs. The result is a chaotic-looking cluster of zombies."
+        ]
+    },
 };
 function closeModal() {
     document.getElementById('imageModal').style.display = "none";
