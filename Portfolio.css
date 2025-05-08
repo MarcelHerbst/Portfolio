@@ -308,6 +308,17 @@ html, body {
   font-size: 0.9rem;
   color: #ccc;
   text-align: center;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+}
+
+.horde-gallery .image-caption {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #ccc;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
 }
 
 .modal {
@@ -367,9 +378,13 @@ html, body {
     
 }
 
-.section-heading.section-characters {
-  color: #a5eaff;
-  text-shadow: 0 0 6px rgba(165, 234, 255, 0.4);
+.section-heading.section-3D-Character {
+  color:#FFC5B5;
+  text-shadow: 0 0 6px rgba(255, 170, 150, 0.4); /* warmes Lichtrosa/Apricot */
+  border-bottom: 3px solid rgba(255, 197, 181, 0.5); /* Linie in Blau */
+  width: fit-content;
+  margin: -6rem auto 1rem auto;
+  line-height: 0.8;
 }
 
 .model-title {

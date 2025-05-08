@@ -123,7 +123,13 @@ function showHTMLContent(title: string, imagePaths: string[], textLines: string[
   
   // 👇 alle Bilder als <img>-Elemente
   const imageHtml = imagePaths.map((src, index) => {
-    const labels = ["Links", "Vorne", "Rechts", "Hinten"];
+    const isHorde = title.includes("Horde");
+    const isSingleImage = imagePaths.length === 1;
+    const labels = isHorde
+      ? ["Left", "Front Left", "Front", "Front Right", "Right", "Back"]
+      : isSingleImage
+      ? ["Front"]
+      : ["Left", "Front", "Right", "Back"];
     const label = labels[index] || `Ansicht ${index + 1}`;
     return `
       <div class="image-block">
@@ -132,12 +138,13 @@ function showHTMLContent(title: string, imagePaths: string[], textLines: string[
       </div>`;
   }).join("");
 
-  const textHtml = textLines.map(line => `<p class="model-description">${line.replace(/\n/g, "<br>")}</p>`).join("");
+  const textHtml = `<p class="model-description">${textLines.join("\n").replace(/\n/g, "<br>")}</p>`;
+  const galleryClass = title.includes("Horde") ? "image-gallery horde-gallery" : "image-gallery";
 
   container.innerHTML = `
     <h1 class="section-heading ${getSectionClass(sectionTitle)}">${sectionTitle}</h1>
     <h2 class="model-title">${title}</h2>
-    <div class="image-gallery">
+    <div class="${galleryClass}">
       ${imageHtml}
     </div>
     ${textHtml}
@@ -157,8 +164,8 @@ function showHTMLContent(title: string, imagePaths: string[], textLines: string[
     switch (title) {
       case 'Fall of Egypt: The Last City':
         return 'section-foe';
-      case 'Characters':
-        return 'section-characters';
+      case '3D-Character':
+        return 'section-3D-Character';
       case 'Ambisonic':
         return 'section-ambisonic';
       // Weitere Sektionen hier ergänzen
@@ -201,12 +208,63 @@ const htmlContentMap: Record<string, { title: string; images: string[]; text: st
       "3DModell/Horde/Horde_Vorne.png",
       "3DModell/Horde/Horde_Vorne_Rechts.png",
       "3DModell/Horde/Horde_Rechts.png",
-      "3DModell/Horde/Horde_Hinten.png",
+      "3DModell/Horde/Horde_Hinten.png"
     ],
     text:[
       "The horde model was created using multiple individual parts of the zombie model in a modular, kit-like system. This allowed me to save time and create different poses, or omit parts like arms or legs. sThe result is a chaotic-looking cluster of zombies."
     ]
   },
+  "#zombie":{
+    title:"Zombie Modell",
+    sectionTitle: "Fall of Egypt: The Last City",
+    images:[
+      "3DModell/Zombie/Zombie_Links.png",
+      "3DModell/Zombie/Zombie_Vorne.png",
+      "3DModell/Zombie/Zombie_Rechts.png",
+      "3DModell/Zombie/Zombie_Hinten.png"
+    ],
+    text:[
+      "For the zombie, I modeled all body parts individually to allow for experimenting with different poses. This saved time, as the parts could be reused like a modular kit. The boils are meant to suggest an infection – complemented by bite wounds and a hole in the thigh where the bone is exposed. My idea for this specific zombie was that it should lack intelligence. While it’s possible to imagine that some zombies could be intelligent, I deliberately wanted to show the opposite here: a creature that got stuck somewhere due to its stupidity, resulting in the hole. I found this idea intriguing."
+    ]
+  },
+  "#roundtracker":{
+    title:"Round Tracker",
+    sectionTitle: "Fall of Egypt: The Last City",
+    images:[
+      "3DModell/Roundtracker/Roundtracker.png",
+    ],
+    text:[
+      "For the Round Tracker, I chose a classic design inspired by an hourglass. Although the ancient Egyptians didn’t have hourglasses in the modern sense, they used a type of water clock that had certain similarities in both function and appearance."
+    ]
+  },
+  "#cardholder":{
+    title:"Card Holder",
+    sectionTitle: "Fall of Egypt: The Last City",
+    images:[
+      "3DModell/Cardholder/Cardholder.png",
+    ],
+    text:[
+      "The card holder was designed to be large and deep enough to neatly hold all resource cards, instead of having them scattered across the table."
+    ]
+  },
+
+  "#kumo":{
+    title: "Kumo the One-Legged",
+    sectionTitle: "3D-Character",
+    images:[
+      "3DModell/Kumo/Kumo_Links.png",
+      "3DModell/Kumo/Kumo_Vorne.png",
+      "3DModell/Kumo/Kumo_Rechts.png",
+      "3DModell/Kumo/Kumo_Hinten.png",
+    ],
+    text: [
+      "Kumo the One-Legged is the very first character I ever modeled. He had existed in my mind for a long time – a panda-like humanoid, covered in scars, capable of fighting, and also a blacksmith.",
+      "Many of my personal 'what if' thoughts flowed into Kumo’s creation. For example, if I had lived in the Middle Ages, I would have definitely become a blacksmith – I have a deep appreciation for that craft.",
+      "Life is full of unexpected events. Things happen that you can't foresee. But no matter what life throws at you, you should never give up. That’s exactly what Kumo represents. He has only one leg and is marked by wounds, yet he still stands strong.",
+      "The reason I made Kumo an animal-human hybrid is because I’ve always found such beings fascinating, especially in anime. And why a panda? Pandas are clumsy and cute, but they survive through their clumsiness.",
+      "This animal felt like the perfect symbol to express all of that in Kumo. I’m very proud of Kumo. :D"
+    ]
+  }
 
 };
 
