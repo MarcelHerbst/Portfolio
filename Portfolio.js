@@ -174,7 +174,7 @@ const htmlContentMap = {
             "3DModell/Horde/Horde_Hinten.png",
         ],
         text: [
-            "The horde model was created using multiple individual parts of the zombie model in a modular, kit-like system. This allowed me to save time and create different poses, or omit parts like arms or legs. The result is a chaotic-looking cluster of zombies."
+            "The horde model was created using multiple individual parts of the zombie model in a modular, kit-like system. This allowed me to save time and create different poses, or omit parts like arms or legs. sThe result is a chaotic-looking cluster of zombies."
         ]
     },
 };
